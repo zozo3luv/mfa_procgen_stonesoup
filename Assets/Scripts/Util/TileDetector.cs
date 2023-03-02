@@ -37,4 +37,17 @@ public class TileDetector : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerExit2D(Collider2D other)
+	{
+		if (_parentTile == null)
+		{
+			return;
+		}
+		Tile otherTile = other.GetComponent<Tile>();
+		if (otherTile != null && otherTile.hasTag(tagsToDetect))
+		{
+			_parentTile.tileNoLongerDetected(otherTile);
+		}
+	}
+
 }
