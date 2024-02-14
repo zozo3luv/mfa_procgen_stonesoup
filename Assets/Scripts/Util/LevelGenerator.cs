@@ -52,19 +52,27 @@ public class LevelGenerator : MonoBehaviour {
 		_currentBagIndex = 0;
 	}
 
-	protected GameObject nextRoomToSpawn() {
-		if (_IDBag == null || _currentBagIndex >= _IDBag.Length) {
-			createNewIDBag();
-		}
-		string netID = _IDBag[_currentBagIndex];
-		_currentBagIndex++;
+	protected GameObject nextRoomToSpawn()
+    {
+        string netID = getIDBag();
 
-		string roomPath = string.Format("{0}/room", netID);
-		return Resources.Load<GameObject>(roomPath); 
-	}
+        string roomPath = string.Format("{0}/room", netID);
+        return Resources.Load<GameObject>(roomPath);
+    }
 
-	// The function called by the GameManager to actually generate the level.
-	public virtual void generateLevel() {
+    private string getIDBag()
+    {
+        if (_IDBag == null || _currentBagIndex >= _IDBag.Length)
+        {
+            createNewIDBag();
+        }
+        string netID = _IDBag[_currentBagIndex];
+        _currentBagIndex++;
+        return netID;
+    }
+
+    // The function called by the GameManager to actually generate the level.
+    public virtual void generateLevel() {
 		createNewIDBag();
 
 		if (GameManager.gameMode == GameManager.GameMode.SingleRoom) {
@@ -76,7 +84,20 @@ public class LevelGenerator : MonoBehaviour {
 		}
 	}
 
-	
+	GameObject getStartRoom()
+	{
+		string netID = getIDBag();
+
+        string roomPath = string.Format("{0}/start_room", netID);
+		GameObject startRoom = Resources.Load<GameObject>(roomPath);
+
+		if (startRoom == null)
+			startRoom = startRoomPrefab;
+
+		startRoom.name = "Start";
+
+        return startRoom;
+	}
 
 	public virtual void generateCombinedRoomModeLevel() {
 		float totalRoomWidth = Tile.TILE_SIZE*ROOM_WIDTH;
@@ -98,7 +119,7 @@ public class LevelGenerator : MonoBehaviour {
 		Dir entranceDir = oppositeDir(currentDir);
 		// Keep going in our current direction until we hit a will
 		bool makingCriticalPath = true;
-		GameObject roomToSpawn = startRoomPrefab;
+		GameObject roomToSpawn = getStartRoom();
 
 		// This is based on Spelunky's method of building a critical path.
 		// This code is kind of a mess and could likely be easily improved.=
@@ -180,7 +201,7 @@ public class LevelGenerator : MonoBehaviour {
 
 			Room room = null;
             ExitConstraint requiredExits = new ExitConstraint();
-			if (roomToSpawn == startRoomPrefab) {
+			if (roomToSpawn.name == "Start") {
                 requiredExits.addDirConstraint(exitDir);
                 room = Room.generateRoom(roomToSpawn, this, currentRoomX, currentRoomY, requiredExits);
 				GameManager.instance.currentRoom = room;
@@ -317,7 +338,7 @@ public class LevelGenerator : MonoBehaviour {
 		Dir entranceDir = oppositeDir(currentDir);
 		// Keep going in our current direction until we hit a will
 		bool makingCriticalPath = true;
-		GameObject roomToSpawn = startRoomPrefab;
+		GameObject roomToSpawn = getStartRoom();
 
 		while (makingCriticalPath) {
 			// Let's figure out what our required exits are going to be.
@@ -397,7 +418,7 @@ public class LevelGenerator : MonoBehaviour {
 
 			Room room = null;
             ExitConstraint requiredExits = new ExitConstraint();
-			if (roomToSpawn == startRoomPrefab) {
+			if (roomToSpawn.name == "Start") {
                 requiredExits.addDirConstraint(exitDir);
                 room = Room.generateRoom(roomToSpawn, this, currentRoomX, currentRoomY, requiredExits);
 				GameManager.instance.currentRoom = room;
