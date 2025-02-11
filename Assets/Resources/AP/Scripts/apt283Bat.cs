@@ -94,7 +94,7 @@ public class apt283Bat : Tile {
 		float swingSpeed = 1440f;
 		while (swingAmount < 200) {
 			//Debug.Log(swingAmount);
-			Debug.Log(_tileHoldingUs.GetComponent<Rigidbody2D>().velocity);
+			Debug.Log(_tileHoldingUs.GetComponent<Rigidbody2D>().linearVelocity);
 			//float angle = aimAngle+135f-swingAmount;
 			//Vector2 forceDir = new Vector2(Mathf.Cos(angle*Mathf.Deg2Rad), Mathf.Sin(angle*Mathf.Deg2Rad));
 			_tileHoldingUs.addForce(_swingDir*300f);

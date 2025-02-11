@@ -83,8 +83,8 @@ public class apt283Rock : Tile {
 				_afterThrowCounter -= Time.deltaTime;
 			}
 			// If we've been in the air long enough, need to check if it's time to consider ourself "on the ground"
-			else if (_body.velocity.magnitude <= onGroundThreshold) {
-				_body.velocity = Vector2.zero;
+			else if (_body.linearVelocity.magnitude <= onGroundThreshold) {
+				_body.linearVelocity = Vector2.zero;
 				if (_afterThrowCounter <= 0 && _tileThatThrewUs != null && _tileThatThrewUs.GetComponent<Collider2D>() != null) {
 					Physics2D.IgnoreCollision(_tileThatThrewUs.GetComponent<Collider2D>(), _collider, false);
 				}
@@ -120,7 +120,7 @@ public class apt283Rock : Tile {
 			}
 			Tile otherTile = collision.gameObject.GetComponent<Tile>();
 			otherTile.takeDamage(this, 1);
-			otherTile.addForce(_body.velocity.normalized*damageForce);
+			otherTile.addForce(_body.linearVelocity.normalized*damageForce);
 		}
 	}
 

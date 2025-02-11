@@ -164,7 +164,7 @@ public class apt283BetterSword : Tile {
 		_swingDir = _tileHoldingUs.aimDirection.normalized;
 
 		transform.localPosition = new Vector3(_sprite.sprite.bounds.size.x/2f+0.5f, 0, 0);
-		if (_tileHoldingUs.body.velocity.magnitude < 8f) {
+		if (_tileHoldingUs.body.linearVelocity.magnitude < 8f) {
 			_tileHoldingUs.addForce(_tileHoldingUs.aimDirection.normalized*500f);
 		}
 
@@ -211,7 +211,7 @@ public class apt283BetterSword : Tile {
 		float swingSpeed = 720f;
 		float swingAcceleration = 10000f;
 		transform.localPosition = new Vector3(_sprite.sprite.bounds.size.x/2f+0.9f, 0, 0);
-		if (_tileHoldingUs.body.velocity.magnitude < 8f) {
+		if (_tileHoldingUs.body.linearVelocity.magnitude < 8f) {
 			_tileHoldingUs.addForce(_tileHoldingUs.aimDirection.normalized*700f);
 		}
 		while (swingAmount < 210f) {

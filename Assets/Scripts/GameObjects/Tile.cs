@@ -187,9 +187,9 @@ public class Tile : MonoBehaviour {
 	// Thus it's protected so other tiles can't attempt to move a tile using this function.
 	protected void moveViaVelocity(Vector2 direction, float speed, float acceleration) {
 		if (_body != null) {
-			Vector2 currentVelocity = _body.velocity;
+			Vector2 currentVelocity = _body.linearVelocity;
 			currentVelocity = Vector2.MoveTowards(currentVelocity, direction*speed, acceleration*Time.fixedDeltaTime);
-			_body.velocity = currentVelocity;
+			_body.linearVelocity = currentVelocity;
 		}
 	}
 
@@ -293,7 +293,7 @@ public class Tile : MonoBehaviour {
 			return;
 		}
 		if (_body != null) {
-			_body.velocity = Vector2.zero;
+			_body.linearVelocity = Vector2.zero;
 			_body.bodyType = RigidbodyType2D.Kinematic;
 		}
 		transform.parent = tilePickingUsUp.transform;

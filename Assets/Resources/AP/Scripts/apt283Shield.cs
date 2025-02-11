@@ -44,7 +44,7 @@ public class apt283Shield : Tile {
 			ourJoint.connectedBody = null;
 
 			_body.bodyType = RigidbodyType2D.Kinematic;
-			_body.velocity = Vector2.zero;
+			_body.linearVelocity = Vector2.zero;
 			_body.angularVelocity = 0;
 
 			heldCollider.enabled = false;

@@ -21,7 +21,7 @@ public class apt283Bullet : Tile {
 
 	void Update() {
 		// If we're moving kinda slow now we can just delete ourselves.
-		if (_body.velocity.magnitude <= onGroundThreshold) {
+		if (_body.linearVelocity.magnitude <= onGroundThreshold) {
 			_destroyTimer -= Time.deltaTime;
 			if (_destroyTimer <= 0) {
 				die();
