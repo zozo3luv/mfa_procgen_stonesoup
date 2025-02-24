@@ -93,7 +93,7 @@ public class LevelGenerator : MonoBehaviour {
 
 		if (startRoom == null)
 			startRoom = startRoomPrefab;
-
+		
 		startRoom.name = "Start";
 
         return startRoom;
