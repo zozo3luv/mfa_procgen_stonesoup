@@ -120,7 +120,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -159,12 +159,14 @@ MonoBehaviour:
   aimDirection: {x: 0, y: 0}
   m_bulletPrefb: {fileID: 4231518925353451724, guid: a5b8ce40082602640aea5c055aa0b9d5,
     type: 3}
-  m_bulletAmount: 3
-  m_ringRadius: 3
-  m_radiusOffset: 2.13
-  m_radiusNoiseScale: 2
-  m_initRotAngleOffset: 0
-  m_rotAngleChangeRate: 0.1
-  m_bulletForce: 0.5
-  m_spawnRate: 0.5
+  m_bulletAmount: 10
+  m_bulletForce: 1
+  m_ringRadius: 1
+  m_radiusOffset: 0.2
+  m_radiusNoiseScale: 3
+  m_initRotAngleOffset: 41
+  m_rotAngleChangeRate: 2.3
+  m_spawnRate: 0.6
+  m_spawnRateOffset: 0.05
   m_spawnTrackerIncre: 0.1
+  m_maxSpawnNum: 100

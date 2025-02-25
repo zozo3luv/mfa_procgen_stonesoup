@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BearTrap : BasicAICreature
+public class zt649PerlinEnemy : BasicAICreature
 {
     [SerializeField] private float m_perlinNoiseMult = 100f;
     private void Update()
