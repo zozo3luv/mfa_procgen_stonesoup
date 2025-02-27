@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1896788399910994
+--- !u!1 &1335745978078546
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4561350303700290}
-  - component: {fileID: 114103883745807518}
+  - component: {fileID: 4243661851364308}
+  - component: {fileID: 114252373118954356}
   m_Layer: 0
-  m_Name: room
+  m_Name: _start_room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4561350303700290
+--- !u!4 &4243661851364308
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896788399910994}
+  m_GameObject: {fileID: 1335745978078546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,23 +32,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114103883745807518
+--- !u!114 &114252373118954356
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1896788399910994}
+  m_GameObject: {fileID: 1335745978078546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 294f5a475b8f7481a8f1bb007b2cacda, type: 3}
+  m_Script: {fileID: 11500000, guid: e9fda1be0f47f4d2eb0cd4977c7295a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomAuthor: AP Thomson
-  designedRoomFile: {fileID: 0}
-  localTilePrefabs: []
+  roomAuthor: Zoey
+  designedRoomFile: {fileID: 4900000, guid: 8485b7cc1cccc164abfc7adcca1cbf74, type: 3}
+  localTilePrefabs:
+  - {fileID: 8419977421200841210, guid: 6ab22537cbd082c4c93f65d4b1db7a97, type: 3}
+  - {fileID: 125900966780908323, guid: 357d45d2ef70cef4c92c0240e519de9c, type: 3}
+  - {fileID: 1224687453642000, guid: bba9de82886db444980f5c22f285e992, type: 3}
+  - {fileID: 1312951893184288, guid: 68f68340d004845b1b0a1ace895aa64d, type: 3}
   roomGridX: 0
   roomGridY: 0
-  roomChoices:
-  - {fileID: 1896788399910994, guid: f241f8aefd8d141e18a3dbe75af6daf0, type: 3}
-  - {fileID: 1335745978078546, guid: c8a695a8ea5e043b4b0f41cb0f84a70b, type: 3}

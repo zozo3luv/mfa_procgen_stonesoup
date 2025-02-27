@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4685705194153805276}
   - component: {fileID: 3438505714343057550}
   m_Layer: 0
-  m_Name: Bear Trap
+  m_Name: Perlin Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

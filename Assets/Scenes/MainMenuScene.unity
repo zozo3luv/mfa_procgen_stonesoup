@@ -1116,7 +1116,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allContributorIDs:
-  - Zoey
   - AP
 --- !u!4 &1420620112
 Transform:
