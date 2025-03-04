@@ -8,6 +8,7 @@ public class zt649PerlinEnemy : BasicAICreature
     {
         takeStep();
     }
+    
     protected override void takeStep()
     {
         Vector2 _curPos = new Vector2(globalX, globalY);

@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomAuthor: Zoey
-  designedRoomFile: {fileID: 0}
-  localTilePrefabs: []
+  designedRoomFile: {fileID: 4900000, guid: 8485b7cc1cccc164abfc7adcca1cbf74, type: 3}
+  localTilePrefabs:
+  - {fileID: 7630202513795829108, guid: 32131a790fbf4f942a806804a4375e45, type: 3}
+  - {fileID: 1781302445510578, guid: 5652ba27092cb6f49b42a1a4607f6f4a, type: 3}
+  - {fileID: 1224687453642000, guid: bba9de82886db444980f5c22f285e992, type: 3}
+  - {fileID: 1312951893184288, guid: 68f68340d004845b1b0a1ace895aa64d, type: 3}
   roomGridX: 0
   roomGridY: 0

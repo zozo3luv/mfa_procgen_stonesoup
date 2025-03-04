@@ -24,6 +24,7 @@ public class zt649BulletRing : Tile
     [SerializeField] private float m_spawnTrackerIncre = 0.1f;
     [SerializeField] private int m_maxSpawnNum = 100;
     
+    
     private bool m_firing = false;
     private float m_timer = 0;
     private int m_bulletIndexThisRound = 0;
